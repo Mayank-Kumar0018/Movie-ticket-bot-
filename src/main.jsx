@@ -11,8 +11,9 @@ import Page2 from './component/Page2.jsx'
 import BuyTicket from './component/BuyTicket.jsx'
 import Purchase from './component/Purchase.jsx'
 import View from './component/View.jsx'
-import Cancel from './component/cancel.jsx'
+// import Cancel from './component/cancel.jsx'
 import Help from './component/Help.jsx'
+import Cancel from './component/Cancel.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
