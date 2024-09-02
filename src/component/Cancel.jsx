@@ -7,9 +7,11 @@ function Cancel() {
     const [ticket, setTicket] = useState(null)
     const [error, setError] = useState(null)
     const [userData, setUserData] = useState(null)
+    const [deleted  , setDeleted] = useState(false)
     const handleSubmit = async (e) => {
         e.preventDefault()
         setError(null)
+        setDeleted(false)
         if (ticket) {
             try {
 
@@ -33,6 +35,9 @@ function Cancel() {
             console.log(userData)
 
             const cancel = await DB.deletePost(userData.ticketID)
+            console.log("deleted")
+
+            setDeleted(true)
             if (cancel) {
                 console.log("deleted")
             }
@@ -54,6 +59,7 @@ function Cancel() {
                 <div>Number of Ticket : {userData.number}</div>
             </div>}
             {userData && <Button onClick={handleCancel} className={'bg-red-600'}>Cancel</Button>}
+            {deleted && <div className='text-red-500 text-center'>Ticket Succesfully canceled</div>}
 
         </>
     )

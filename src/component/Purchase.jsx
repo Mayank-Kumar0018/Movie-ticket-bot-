@@ -50,7 +50,7 @@ function Purchase() {
                 console.log(ticketID)
                 setTimeout(()=>{
                     navigate("/page2")
-                } , 2000)
+                } , 10000)
             }
 
             
@@ -81,7 +81,8 @@ function Purchase() {
                     
                 </div>
                 {!post && <Button type = "submit" className={'mt-16'}>Buy</Button>}
-                {post && <div className='bg-green-500 '>Ticket ID : {ticketID} is Booked</div>}
+                {post && <div className='bg-green-500 py-1 '>Ticket ID : {ticketID} is Booked</div>}
+                {post && <div className=' '>Copy Ticket Id for future reference</div>}
             </form>
         </>
 
